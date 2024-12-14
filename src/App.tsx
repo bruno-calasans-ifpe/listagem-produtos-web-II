@@ -1,3 +1,5 @@
+import Loader from "./components/Loader";
+import ProductError from "./components/ProductError";
 import useProducts from "./hooks/useProducts";
 
 function App() {
@@ -5,18 +7,13 @@ function App() {
 
   if (error)
     return (
-      <div className="flex justify-center items-center gap-1">
-        <p>Algo deu errado</p>
-      </div>
+      <ProductError
+        title="Algo deu errado!"
+        text="Não foi possível carregar os produtos"
+      />
     );
 
-  if (loading)
-    return (
-      <div className="flex justify-center items-center gap-1">
-        <p>Carregando produtos...</p>
-        <div className="animate-pulse w-8 h-8 rounded-full bg-indigo-600"></div>
-      </div>
-    );
+  if (loading) return <Loader />;
 
   return <div>App</div>;
 }

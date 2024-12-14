@@ -12,16 +12,16 @@ export default function ProductCard({ product }: ProductCardProps) {
         className="rounded-md w-full rounded-b-none"
         src={product.images[0]}
       />
-      <div className="flex flex-col flex-1 p-3 justify-center">
+      <div className="flex flex-col flex-1 p-3">
         <p className="text-stone-700 self-start font-bold text-md">
           {product.title}
         </p>
         <p className="text-emerald-500 font-bold">R${product.price}</p>
-        <p className="absolute top-2 right-2  border-2 border-indigo-500 rounded-md p-1 bg-indigo-500 text-white font-bold ">
+        <p className="absolute top-2 right-2  border-2 border-indigo-500 rounded-md p-1 bg-indigo-500 text-white font-bold text-sm">
           {product.category.name}
         </p>
       </div>
-      <div className="bg-emerald-600 p-1 font-bold text-white  opacity-0 transition-all delay-100 group-hover:flex justify-center items-center w-full group-hover:opacity-100 ease-in-out gap-1 h-8">
+      <div className="bg-emerald-600 p-1 font-bold text-white  opacity-0 transition-all delay-100 flex justify-center items-center w-full group-hover:opacity-100 ease-in-out gap-1 h-8 text-sm">
         <ShoppingCart />
         Adicionar ao Carrinho
       </div>

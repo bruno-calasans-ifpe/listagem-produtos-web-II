@@ -2,21 +2,20 @@ import useProducts from "../hooks/UseProducts";
 import ProductCard from "./ProductCard";
 import ProductError from "./ProductError";
 import Loader from "./Loader";
-import Center from "./Center";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function ProductsList() {
-  const { products, error, pagination, loadProducts } = useProducts();
-  console.log(products);
+  const { products, error, loading, pagination, loadProducts } = useProducts();
+  console.log(products, loading);
 
   if (error)
     return (
-      <Center>
-        <ProductError
-          title="Algo deu errado!"
-          text="Não foi possível carregar os produtos"
-        />
-      </Center>
+      <ProductError
+        title="Algo deu errado :("
+        text="Não foi possível carregar os produtos"
+        loading={loading}
+        onClickRetry={loadProducts}
+      />
     );
 
   return (

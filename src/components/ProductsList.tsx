@@ -1,4 +1,4 @@
-import useProducts from "../hooks/UseProducts";
+import useProducts from "../hooks/useProducts";
 import ProductCard from "./ProductCard";
 import ProductError from "./ProductError";
 import Loader from "./Loader";
@@ -33,7 +33,7 @@ export default function ProductsList() {
           Você chegou ao final da lista
         </div>
       }
-      className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-5 p-2"
+      className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 p-2 md:gap-10"
     >
       {products.map((p, i) => (
         <ProductCard key={p.title + i} product={p} />

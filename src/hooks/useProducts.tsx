@@ -29,7 +29,7 @@ export default function UseProducts() {
           limit,
         },
       });
-
+      console.log(data)
       const cleanupData = data.filter((p) => p.title != "New Product");
       setProducts((current) => [...current, ...cleanupData]);
       setPagination((current) => ({
